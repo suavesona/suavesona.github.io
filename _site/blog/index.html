@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Suavesona</title>
+  <link rel="stylesheet" type="text/css" href="/style.css"><!--link to style.css-->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script><!-- Handlebar-->
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"><!-- Bootstrap-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><!--Font Awesome-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script><!-- jQuery library -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script><!-- Latest compiled JavaScript -->
+</head>
+
+  <body>
+    <div class="body">
+
+        <!-- navigation, links-->
+        <div class="container">
+          <ul id="nav" aria-expanded="false" class="collapse">
+            <li>
+              <a href="">Home</a>
+            </li>
+            <li>
+              <a href="blog/">Blog</a>
+            </li>
+            <li>
+              <a href="mailto:suavesona@outlook.com">Contact</a>
+            </li>
+            <li>
+              <a href="/microposts/">Short Stories</a>
+            </li>
+          </ul>
+        </div>
+        <!-- end of navigation links-->
+
+        <!--header -->
+        <div class="container">
+          <div class="header"><!-- the div with stars and gif-->
+            <div class="row">
+              <div class="col-md-12">
+                <h1 class="title">Suavesona</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end of header-->
+
+        <div>
+          <!-- body & links content-->
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="content"><!--content section-->
+        <h1>Content</h1>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="links" ><!--links section-->
+        <h1 class="text-center">Links</h1>
+          <div id="p1">
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end of body & links-->
+
+<script
+  id="handlebars"
+    type="text/x-handlebars-template">
+
+{{#links}}
+      <div>
+        <h4><a href="{{link}}">{{title}}</a></h4>
+          <p>{{description}}</p>
+      </div>
+    {{/links}}
+
+ </script>
+<script>
+
+         var template = $("#handlebars").html();
+         var templateScript = Handlebars.compile(template);
+         var context = { links : [
+             {"link": "https://www.futurelearn.com/courses/electronic-music-tools/2", "title" : "Learn to Code Electronic Music Tools", "description" : "A MOOC for teaching people how to build synthesizers and drum loops using the Web Audio API Javascript library."},
+             {"link": "https://www.futurelearn.com/courses/creative-coding/4", "title": "Creative Coding", "description": "A MOOC for teaching people how to create audiovisual content using Processing."},
+             {"link": "https://www.coursera.org/learn/html-css-javascript", "title": "HTML, CSS, and Javascript", "description": "This course teaches HTML, CSS, and Javascript by creating web pages. "}
+         ]};
+         var html = templateScript(context);
+         $("#p1").append(html);
+
+ </script>
+</body>
+</html>
+
+        </div>
+
+    </div>
+
+      <!-- footer-->
+      <footer>
+        <h4 class="footer">Coded by <a href="https://github.com/suavesona">Arely</a></h4>
+      </footer>
+      <!-- end of footer-->
+
+      <!-- navigation, button -->
+      <button class="fa fa-cloud button"
+              data-toggle="collapse"
+              data-target="#nav"></button>
+      <!-- end of navigation button-->
+
+    </body>
+</html>

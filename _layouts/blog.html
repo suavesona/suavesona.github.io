@@ -1,0 +1,49 @@
+---
+layout: default
+---
+<!-- body & links content-->
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="content"><!--content section-->
+        <h1>Content</h1>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="links" ><!--links section-->
+        <h1 class="text-center">Links</h1>
+          <div id="p1">
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end of body & links-->
+
+<script
+  id="handlebars"
+    type="text/x-handlebars-template">
+{% raw %}
+{{#links}}
+      <div>
+        <h4><a href="{{link}}">{{title}}</a></h4>
+          <p>{{description}}</p>
+      </div>
+    {{/links}}
+{% endraw %}
+ </script>
+<script>
+{% raw %}
+         var template = $("#handlebars").html();
+         var templateScript = Handlebars.compile(template);
+         var context = { links : [
+             {"link": "https://www.futurelearn.com/courses/electronic-music-tools/2", "title" : "Learn to Code Electronic Music Tools", "description" : "A MOOC for teaching people how to build synthesizers and drum loops using the Web Audio API Javascript library."},
+             {"link": "https://www.futurelearn.com/courses/creative-coding/4", "title": "Creative Coding", "description": "A MOOC for teaching people how to create audiovisual content using Processing."},
+             {"link": "https://www.coursera.org/learn/html-css-javascript", "title": "HTML, CSS, and Javascript", "description": "This course teaches HTML, CSS, and Javascript by creating web pages. "}
+         ]};
+         var html = templateScript(context);
+         $("#p1").append(html);
+{% endraw %}
+ </script>
+</body>
+</html>

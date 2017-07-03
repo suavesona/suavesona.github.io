@@ -1,0 +1,14 @@
+#Name
+title: Suavesona
+
+#Description
+description:
+
+#URL
+baseurl:
+
+#microposts
+collections:
+  microposts:
+    output: true
+    permalink: /microblog/:year/:month/:slug/

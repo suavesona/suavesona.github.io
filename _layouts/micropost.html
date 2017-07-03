@@ -1,0 +1,18 @@
+---
+layout: default
+---
+<div class="container">
+  <div class="content">
+    <div class="row">
+      <div class="col-md-12">
+
+        <div class="text">{{ content }}</div><!-- don't forget this tag-->
+
+        <small>
+          <a href="{{ site.baseurl }}{{ post.url }}">{{ page.date | date: "%a, %b %d, %Y at %I:%M%P" }}</a>
+        </small>
+
+      </div>
+    </div>
+  </div>
+</div>

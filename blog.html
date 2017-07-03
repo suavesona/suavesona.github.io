@@ -1,0 +1,24 @@
+---
+title: Blog
+layout: blog
+permalink: /blog/
+---
+<div>
+  {% for post in site.posts %}<!-- a liquid "for" loop iterates/ whatever you put after "for" will be your variable in the rest of the page -->
+
+        <h2>
+          <a href= "{{ site.baseurl }}{{ post.url }}">
+            {{ post.title }}
+          </a>
+        </h2>
+
+        <p>
+          {{ post.excerpt }}<!-- post excerpt, uses a paragraph of post and links to rest-->
+        </p>
+
+        <a href= "{{ site.baseurl }}{{ post.url }}">
+          Read More
+        </a>
+
+  {% endfor %}<!--ends liquid "for" loop-->
+</div>

@@ -1,0 +1,16 @@
+---
+layout: micropost
+title: Microposts
+permalink: /microposts/
+---
+
+{% for post in site.microposts %}<!-- liquid loop-->
+  <div>
+    {{ post.content }}
+
+    <small>
+      <a href="{{ site.baseurl }}{{ post.url }}" >{{ post.date | date: "%a, %b %d, %Y at %I:%M%P" }}</a>
+    </small>    
+
+  </div>
+{% endfor %}
